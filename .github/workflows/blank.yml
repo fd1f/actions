@@ -7,9 +7,10 @@ on:
   workflow_dispatch:
 jobs:
   claim:
+    strategy:
+      matrix:
+        x: [1, 2, 3]
     runs-on: ubuntu-latest
     steps:
       - name: claim the ip
-        run: curl -L "https://ipv4.games/claim?name=squarebowl.club"
-      - name: claim the ip again
         run: curl -L "https://ipv4.games/claim?name=squarebowl.club"
